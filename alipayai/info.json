@@ -1,0 +1,84 @@
+{
+    "name": "alipayai",
+    "title": "支付宝AI付个人收款",
+    "author": "官方",
+    "link": "https://aipay.alipay.com/",
+    "version": "1.0",
+    "icon": "alipay.png",
+    "desc": "对接支付宝Agent支付（AI付）Vibe Pay基础收款，支持个人账号收款",
+    "pay_types": [
+        "alipay"
+    ],
+    "inputs": {
+        "sign_type": {
+            "name": "接口加签方式",
+            "type": "radio",
+            "options": [
+                "RSA2密钥",
+                "RSA2证书"
+            ],
+            "required": true,
+            "value": "0"
+        },
+        "appid": {
+            "name": "应用APPID",
+            "type": "input",
+            "required": true,
+            "note": "AI付开通后创建的应用APPID"
+        },
+        "appsecret": {
+            "name": "应用私钥",
+            "type": "textarea",
+            "required": true,
+            "note": ""
+        },
+        "appkey": {
+            "name": "支付宝公钥",
+            "type": "textarea",
+            "required": true,
+            "note": "填错也可以支付成功但会无法回调",
+            "show": "sign_type=='0'"
+        },
+        "app_cert_path": {
+            "name": "应用公钥证书",
+            "type": "upload",
+            "accept": ".crt",
+            "required": true,
+            "note": "appCertPublicKey开头的crt格式证书",
+            "show": "sign_type=='1'"
+        },
+        "alipay_cert_path": {
+            "name": "支付宝公钥证书",
+            "type": "upload",
+            "accept": ".crt",
+            "required": true,
+            "note": "alipayCertPublicKey开头的crt格式证书",
+            "show": "sign_type=='1'"
+        },
+        "root_cert_path": {
+            "name": "支付宝根证书",
+            "type": "upload",
+            "accept": ".crt",
+            "required": true,
+            "note": "alipayRootCert开头的crt格式证书",
+            "show": "sign_type=='1'"
+        },
+        "appmchid": {
+            "name": "收款支付宝UID",
+            "type": "input",
+            "note": "2088开头的16位纯数字，个人收款必填，留空则使用应用绑定账号"
+        },
+        "gateway": {
+            "name": "支付宝网关",
+            "type": "input",
+            "value": "https://openapi.alipay.com/gateway.do",
+            "note": "沙箱环境填 https://openapi-sandbox.dl.alipaydev.com/gateway.do"
+        }
+    },
+    "select": {
+        "1": "AI网页应用收款"
+    },
+    "note": "<p>开通流程：1、访问 https://aipay.alipay.com 开通支付宝Agent支付（AI付）；2、在开放平台完成应用配置并签约「AI网页应用收款」，支持支付宝个人账号收款；3、将应用APPID、应用私钥、支付宝公钥（或三张证书）填入上方；4、个人收款请填写本人2088开头的支付宝UID。</p><p>回调地址由系统自动生成：异步 notify_url、同步 return_url，无需手动配置。</p>",
+    "bindwxmp": false,
+    "bindwxa": false
+}
