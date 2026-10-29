@@ -2,6 +2,9 @@
 
 为 彩虹易支付 提供「支付宝 Agent支付（AI付）/ Vibe Pay 基础收款」通道，调用官方 `alipay.trade.page.pay`，支持**个人支付宝账号**收款。
 
+目前测试仅支持新版彩虹易支付！！！！！！因为问用的新版，旧版自测！
+
+
 > 本项目是第三方插件，非支付宝官方项目；接口能力与开通规则以 [支付宝 Agent 支付文档](https://aipay.alipay.com/docs/overview.html) 为准。
 
 ## 特性
