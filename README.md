@@ -23,12 +23,7 @@ alipayai/
 └── README.md
 ```
 
-## 环境要求
 
-- PHP >= 8.0，需启用 `curl`、`openssl`
-- 已安装彩虹易支付系统，且 `plugins/payment/` 目录可写
-- 服务器可访问 `openapi.alipay.com`（沙箱为 `openapi-sandbox.dl.alipaydev.com`）
-- 已有支付宝开放平台「AI付」应用及签约的「AI网页应用收款」
 
 ## 安装
 
